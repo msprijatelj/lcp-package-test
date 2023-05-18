@@ -40,3 +40,4 @@ jobs:
           ITCH_GAME: lcp-package-test
           ITCH_USER: valkyrion
           PACKAGE: dist/${{ github.event.repository.name }}-${{ fromJson(env.PACKAGE_JSON).version }}.lcp
+          VERSION: ${{ fromJson(env.PACKAGE_JSON).version }}
