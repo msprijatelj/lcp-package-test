@@ -17,15 +17,17 @@ jobs:
         with:
           node-version: 18
       - run: npm install
-      - run: npm run build
 
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: ls -l
       - uses: actions/checkout@v3
-      - run: ls -l
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm run build
       - run: |
           echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
           cat ./package.json >> $GITHUB_ENV
