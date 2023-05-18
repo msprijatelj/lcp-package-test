@@ -23,7 +23,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - run: ls -l
       - uses: actions/checkout@v3
+      - run: ls -l
       - run: |
           echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
           cat ./package.json >> $GITHUB_ENV
