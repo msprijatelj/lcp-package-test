@@ -23,6 +23,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
+          cat ./package.json >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
       - name: Butler Push
         uses: yeslayla/butler-publish-itchio-action@v1.0.3
         env:
@@ -30,4 +34,4 @@ jobs:
           CHANNEL: lcp-demo
           ITCH_GAME: lcp-package-test
           ITCH_USER: valkyrion
-          PACKAGE: dist/${{ github.event.repository.name }}-${{ github.ref }}.lcp
+          PACKAGE: dist/${{ github.event.repository.name }}-${{ fromJson(env.PACKAGE_JSON).version }}.lcp
