@@ -1,0 +1,9 @@
+{
+    "name": "Test Data",
+    "version": "0.0.1",
+    "author": "Valkyrion",
+    "description": "Player-side COMP/CON test data.",
+    "item_prefix": "test",
+    "image_url": "",
+    "website": ""
+}

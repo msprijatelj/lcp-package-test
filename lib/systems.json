@@ -1,0 +1,16 @@
+[
+    {
+        "id": "test_system",
+        "name": "Test System",
+        "type": "System",
+        "sp": 3,
+        "tags": [
+            {
+                "id": "tg_unique"
+            }
+        ],
+        "source": "EXOTIC",
+        "effect": "Test.",
+        "description": "Test."
+    }
+]
