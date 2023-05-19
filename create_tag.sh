@@ -25,6 +25,7 @@ update_version package.json
 cd lib/
 update_version lcp_manifest.json
 cd ../
+npm install
 
 git add package.json lib/lcp_manifest.json
 git commit -m "update version tag to ${tagName}"
