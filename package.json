@@ -1,6 +1,6 @@
 {
   "name": "@valkyrion/lcp-package-test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Test Lancer LCP data",
   "main": "index.js",
   "type": "module",
