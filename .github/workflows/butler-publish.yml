@@ -18,7 +18,7 @@ jobs:
           node-version: 18
       - run: npm install
 
-  publish-itchio:
+  publish-npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
