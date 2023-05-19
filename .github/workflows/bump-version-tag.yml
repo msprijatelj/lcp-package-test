@@ -1,4 +1,5 @@
-# This workflow will increments the "version" field of the package.json, package-lock.json, and 
+# This workflow will perform a patch increment on the version field of the package.json, package-lock.json, and lib/lcp_manifest.json.
+# It then pushes the version change with an accompanying git tag using the Add & Commit action. Documentation here: https://github.com/marketplace/actions/add-commit
 
 name: Bump Version & Tag
 
