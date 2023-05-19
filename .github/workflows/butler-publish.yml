@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install
+      - run: npm ci
 
   publish-itchio:
     needs: build
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install
+      - run: npm ci
       - run: npm run build
       - run: |
           echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
@@ -36,8 +36,8 @@ jobs:
         uses: yeslayla/butler-publish-itchio-action@v1.0.3
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: lcp-demo
-          ITCH_GAME: lcp-package-test
-          ITCH_USER: valkyrion
+          CHANNEL: ${{ vars.BUTLER_CHANNEL }}
+          ITCH_GAME: ${{ vars.ITCH_GAME }}
+          ITCH_USER: ${{ vars.ITCH_USER }}
           PACKAGE: dist/${{ github.event.repository.name }}-${{ fromJson(env.PACKAGE_JSON).version }}.lcp
           VERSION: ${{ fromJson(env.PACKAGE_JSON).version }}
