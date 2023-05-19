@@ -5,6 +5,7 @@ set -e
 tagName=$1;
 
 if [[ -z "${tagName}" ]]; then
+    echo "Missing tag name as argument; exiting"
     exit 1
 fi
 
