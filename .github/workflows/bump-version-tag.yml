@@ -14,13 +14,15 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: npm version patch -m "upgrade version"
+      - run: npm version patch
       - run: echo VERSION=$(jq -j '.version' ./package.json) >> $GITHUB_ENV
       - name: Update LCP Manifest
         run: |
           tmp=$(mktemp)
           jq --arg version "${{ env.VERSION }}" '.version = $version' ./lib/lcp_manifest.json > "$tmp" && mv "$tmp" ./lib/lcp_manifest.json
-      - run: |
-          git commit -am "bump to ${{ env.VERSION }}"
-          git tag -a "${{ env.VERSION }}" -m "Release version ${{ env.VERSION }}"
-          git push
+
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v9.1.3
+        with:
+          message: "bump to ${{ env.VERSION }}"
+          tag: ${{ env.VERSION }} -a -m "Release version ${{ env.VERSION }}"
