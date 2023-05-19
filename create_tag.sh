@@ -27,7 +27,7 @@ update_version lcp_manifest.json
 cd ../
 npm install
 
-git add package.json lib/lcp_manifest.json
+git add package.json package-lock.json lib/lcp_manifest.json
 git commit -m "update version tag to ${tagName}"
 
 read -p "Enter tag message: " msg
