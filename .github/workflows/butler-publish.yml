@@ -29,7 +29,7 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run build
-      - run: echo VERSION=$(jq '.version' ./package.json) | tr -d '"' >> $GITHUB_ENV
+      - run: echo VERSION=$(jq -j '.version' ./package.json) >> $GITHUB_ENV
       - name: Butler Push
         uses: yeslayla/butler-publish-itchio-action@v1.0.3
         env:
