@@ -1,6 +1,6 @@
 # This workflow will increments the "version" field of the package.json, package-lock.json, and 
 
-name: NPM Publish
+name: Bump Version & Tag
 
 on:
   workflow_dispatch:
