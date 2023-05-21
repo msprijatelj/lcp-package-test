@@ -4,9 +4,7 @@
 name: Butler Publish
 
 on:
-  workflow_dispatch:
-  release:
-    types: [created]
+  workflow_call:
 
 jobs:
   build:

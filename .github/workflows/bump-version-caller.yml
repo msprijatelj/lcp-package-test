@@ -1,0 +1,11 @@
+# This workflow calls an org-level reusable workflow for incrementing LCP and NPM package versions.
+
+name: Bump Version & Tag
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-bump-version-tag:
+    uses: msprijatelj/lcp-package-test/.github/workflows/bump-version-tag.yml
+

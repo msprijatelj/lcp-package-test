@@ -4,7 +4,7 @@
 name: Bump Version & Tag
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   increment-version:
