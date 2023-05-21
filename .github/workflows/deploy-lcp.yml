@@ -9,10 +9,10 @@ on:
 
 jobs:
     call-butler-publish:
-        uses: massif-press/.github/workflows/butler-publish.yml@master
+        uses: massif-press/.github/.github/workflows/butler-publish.yml@master
         secrets:
             inherit
     call-npm-publish:
-        uses: massif-press/.github/workflows/npm-publish.yml@master
+        uses: massif-press/.github/.github/workflows/npm-publish.yml@master
         secrets:
             inherit
