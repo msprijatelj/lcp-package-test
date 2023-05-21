@@ -9,10 +9,10 @@ on:
 
 jobs:
     call-butler-publish:
-        uses: msprijatelj/lcp-package-test/.github/workflows/butler-publish.yml
+        uses: msprijatelj/lcp-package-test/.github/workflows/butler-publish.yml@main
         secrets:
             inherit
     call-npm-publish:
-        uses: msprijatelj/lcp-package-test/.github/workflows/npm-publish.yml
+        uses: msprijatelj/lcp-package-test/.github/workflows/npm-publish.yml@main
         secrets:
             inherit
