@@ -17,7 +17,7 @@ on:
 
 jobs:
   call-bump-version-tag:
-    uses: massif-press/.github/.github/workflows/bump-version-tag.yml@master
+    uses: msprijatelj/lcp-package-test/.github/workflows/bump-version-tag.yml@main
     with:
       version_level: ${{ inputs.version_level }}
 

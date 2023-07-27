@@ -5,7 +5,12 @@ name: Bump Version & Tag
 
 on:
   workflow_call:
-
+    inputs:
+      version_level:
+        description: 'Version level to bump, passed by caller workflow'
+        default: 'patch'
+        required: true
+        type: string
 jobs:
   increment-version:
     runs-on: ubuntu-latest
