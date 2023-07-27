@@ -19,8 +19,10 @@ jobs:
       - run: echo VERSION=$(jq -j '.version' ./package.json) >> $GITHUB_ENV
       - name: Update LCP Manifest
         run: |
-          tmp=$(mktemp)
-          jq --arg version "${{ env.VERSION }}" '.version = $version' ./lib/lcp_manifest.json > "$tmp" && mv "$tmp" ./lib/lcp_manifest.json
+          if [[ -w ./lib/lcp_manifest.json ]]; then
+            tmp=$(mktemp)
+            jq --arg version "${{ env.VERSION }}" '.version = $version' ./lib/lcp_manifest.json > "$tmp" && mv "$tmp" ./lib/lcp_manifest.json
+          fi
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.3
